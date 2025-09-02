@@ -1,127 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AABBAV Annual Meeting 2025</title>
+
+  <!-- Visual polish: modern, legible font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary-color: #333;
-      --secondary-color: #fff;
-      --bg-color: #f8f9fa;
-      --accent-bg: rgba(255, 255, 255, 0.2);
-      --overlay-dark: rgba(0, 0, 0, 0.3);
+      --primary-color: #1f2937; /* slate-800 */
+      --secondary-color: #ffffff;
+      --bg-color: #f7fafc; /* light gray */
+      --overlay-dark: rgba(12, 18, 28, 0.55);
+      --brand: #0ea5e9; /* sky-500 */
+      --brand-dark: #0284c7; /* sky-600 */
+      --ring: rgba(14, 165, 233, 0.25);
     }
 
     /* Reset Defaults */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.65;
       color: var(--primary-color);
       background-color: var(--bg-color);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     /* Header with Background Image */
     header {
       position: relative;
-      background: url("./figs/bra_bru.png") no-repeat center center/cover;
+      background: url("./figs/bra_bru.png") no-repeat center/cover;
       color: var(--secondary-color);
-      padding: 2.5rem 1rem;
+      padding: clamp(2rem, 6vw, 4rem) 1rem;
       text-align: center;
+      overflow: hidden;
     }
 
     header::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: var(--overlay-dark);
+      background: linear-gradient(180deg, var(--overlay-dark), rgba(0,0,0,0.35));
       z-index: 1;
     }
 
     header h1 {
-      position: relative;
-      z-index: 2;
-      font-size: 2rem;
-    }
-    .tab-content {
-      display: none; /* Hide all sections by default */
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative; z-index: 2; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: 0.2px;
     }
 
-    .active-content {
-      display: block; /* Show active tab content */
+    /* Back to main box (under title) */
+    .header-box {
+      position: relative; z-index: 2; display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem;
+      background: rgba(255,255,255,0.18); padding: 10px 16px; border-radius: 12px; backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .header-box a { color: #fff; text-decoration: none; font-weight: 600; }
+    .header-box a:hover { text-decoration: underline; }
+
+    /* Main wrapper */
+    .content-wrapper {
+      width: min(1000px, 92%);
+      margin: -2rem auto 3rem; /* slight lift towards header for cohesion */
+      padding: clamp(1.25rem, 4vw, 2rem);
+      background: var(--secondary-color);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #eef2f7;
     }
 
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      background: var(--primary-color);
+    /* Section headings */
+    h2 { text-align: center; margin: 0 0 1rem; font-size: clamp(1.25rem, 2.2vw, 1.6rem); }
+    h3 { text-align: center; margin: 1.5rem 0 0.75rem; font-size: clamp(1.1rem, 2vw, 1.35rem); }
+    h4 { margin: 1.25rem 0 0.5rem; font-size: 1.05rem; }
+
+    /* Decorative underline for the top title */
+    .page-kicker {
+      display: block; width: 80px; height: 3px; margin: .65rem auto 1.25rem; border-radius: 999px; background: var(--brand);
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--secondary-color);
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+    p { margin-bottom: 1rem; }
+
+    /* Timeline styling for the programme */
+    .timeline { list-style: none; margin: 0.75rem 0 1rem; padding-left: 0; position: relative; }
+    .timeline li { position: relative; padding: .5rem .75rem .5rem 1.25rem; margin: .25rem 0; background: #fbfdff; border: 1px solid #eef2f7; border-radius: 10px; }
+    .timeline li::before {
+      content: ""; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px; border-radius: 999px; background: var(--brand);
+      box-shadow: 0 0 0 3px var(--ring);
     }
 
-    nav a:hover, nav a.active {
-      background: var(--accent-bg);
-    }
+    /* Info grid */
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0 0; }
+    .card { background: #ffffff; border: 1px solid #eef2f7; border-radius: 12px; padding: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+    .card h3 { margin-top: 0.25rem; }
 
-    /* Content Styling */
-.content-wrapper {
-  max-width: 90%; /* Expands box width while keeping margins */
-  width: 1000px; /* Adjusted for long text */
-  margin: 2rem auto;
-  padding: 2rem;
-  background: var(--secondary-color);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    /* Buttons */
+    .btn { display: inline-block; padding: .6rem 1rem; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid transparent; transition: transform .08s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 8px 20px rgba(14,165,233,.25); }
+    .btn-primary:hover { background: var(--brand-dark); }
 
+    /* Links inside text */
+    a { color: var(--brand-dark); }
+    a:hover { text-decoration: none; }
 
-    h2, h3 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      margin-bottom: 1rem;
-      padding-left: 1.2rem;
-    }
+    /* Small meta line */
+    .meta { color: #6b7280; font-size: .9rem; margin-top: .75rem; }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+    @media (min-width: 720px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
+    }
 
-      .content-wrapper {
-        padding: 1.5rem;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .header-box { transition: none; }
     }
   </style>
 </head>
@@ -130,18 +133,16 @@
   <!-- HEADER -->
   <header>
     <h1>Associação Acadêmica Belgo Brasileira</h1>
-    <nav>
-      <ul>
-        <li><a href="https://aabbav.github.io" class="active" onclick="openTab(event, 'index')">Principal</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="header-box">
+      <a href="https://aabbav.github.io" aria-label="Return to the main page">Back to main page</a>
+    </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <div class="content-wrapper">
     <h2>AABBAV Annual Meeting 2025</h2>
-    
+    <span class="page-kicker" aria-hidden="true"></span>
+
     <p>
       The annual AABBAV meeting aims to bring together Brazilian academics active in Belgium and Luxembourg, as well as other
       and other academics working with Brazilian partners or on Brazilian-related topics in these countries, for social and
@@ -151,7 +152,7 @@
      <p>
 
     <h3>Tentative Programme</h3>
-    <ul>
+    <ul class="timeline">
       <li>1:00pm-1:10pm: Opening</li>
       <li>1:10pm-1:25pm: Speed dating </li>
       <li>1:25pm-1:35pm: Overview AABB</li>
@@ -189,26 +190,35 @@
       Dinner: Dinner will take place in the Brazilian restaurant TBD.
     </p>
 
-    <h2>Date and Venue</h2>
-    <p>
-      <br> <b>Date:</b> 17th October 2025, from 1pm to 5pm.
-      <br> <b>Venue:</b>Brazilian Embassy in Brussels: Boulevard Saint-Michel 27 - 1040 Etterbeek (Metro: Montgomery)
-    </p>
-    
-    <h2>Registration</h2>
-    <p>
-    The annual meeting is free and open to Brazilian and Belgian academics active in Belgium and Luxembourg.
-    <br> To participate, register before the 10th of October via <a href="https://forms.office.com/e/aJjt32DkqT">registration</a>.
-    <br> Attention: The dinner is not included in the registration.
-    <br> For further inquiries, contact Luana Nascimento via <img src="figs/email AABB.gif" alt="Email Subscribe" style="height: 1.2em; vertical-align: middle;">.
-    </p>
-    
+    <div class="info-grid">
+      <div class="card">
+        <h3>Date and Venue</h3>
+        <p>
+          <b>Date:</b> 17th October 2025, from 1pm to 5pm.<br>
+          <b>Venue:</b> Brazilian Embassy in Brussels: Boulevard Saint-Michel 27 - 1040 Etterbeek (Metro: Montgomery)
+        </p>
+      </div>
+      <div class="card">
+        <h3>Registration</h3>
+        <p>
+          The annual meeting is free and open to Brazilian and Belgian academics active in Belgium and Luxembourg.
+          <br> To participate, register before the 10th of October via <a href="https://forms.office.com/e/aJjt32DkqT">registration</a>.
+          <br> Attention: The dinner is not included in the registration.
+          <br> For further inquiries, contact Luana Nascimento via <img src="figs/email AABB.gif" alt="Email Subscribe" style="height: 1.2em; vertical-align: middle;">.
+        </p>
+        <p>
+          <!-- Extra, optional CTA button for visibility -->
+          <a class="btn btn-primary" href="https://forms.office.com/e/aJjt32DkqT">Register now</a>
+        </p>
+      </div>
+    </div>
+
     <h2>Organisation and Support</h2>
     <p>
       The meeting is organised by the AABBAV Events Committee and has the support of the <a href="https://www.gov.br/mre/pt-br/embaixada-bruxelas">Brazilian Embassy in Brussels</a>.
     </p>
 
-    <p><small>WebMaster: Luis Rocha. Updated: 29.08.2025</small></p>
+    <p class="meta"><small>WebMaster: Luis Rocha. Updated: 29.08.2025</small></p>
   </div>
 
 </body>
