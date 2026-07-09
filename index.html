@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -309,6 +312,37 @@
       margin: 0.5rem 0;
     }
 
+
+
+    /* ----- LANGUAGE SWITCHER ----- */
+    .language-switcher {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .language-switcher button {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      background-color: rgba(0, 0, 0, 0.25);
+      color: #fff;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .language-switcher button:hover,
+    .language-switcher button.active-language {
+      background-color: rgba(255, 255, 255, 0.28);
+      border-color: #fff;
+    }
+
     /* ----- RESPONSIVE DESIGN ----- */
     @media (max-width: 600px) {
       nav ul {
@@ -333,6 +367,13 @@
   <!-- HEADER (TITLE + NAV) -->
   <header>
     <h1>Associação Acadêmica Belgo Brasileira</h1>
+
+    <div class="language-switcher" aria-label="Language selector">
+      <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
+      <button type="button" data-lang-button="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+      <button type="button" data-lang-button="nl" onclick="setLanguage('nl')">🇳🇱 NL</button>
+      <button type="button" data-lang-button="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+    </div>
     <nav>
       <ul>
         <li><a href="#index" class="active" onclick="openTab(event, 'index')">Main</a></li>
@@ -429,7 +470,7 @@
     AABBAV is a member of <a href="https://www.redesabia.org">Rede Sabiá</a>, a network for the Brazilian diaspora working in education, science, technology, and innovation.
     <br>
     <hr>
-	WebMaster: Luis Rocha. Updated: 04.05.2026
+	WebMaster: Luis Rocha. Updated: 09.07.2026
   </section>
 
   <!-- MEMBERS TAB -->
@@ -621,7 +662,7 @@ Contate-nos para ser um representante local / Contact us to be a local represent
             <div class="event-info">
               <h4>Encontros</h4>
               <p>
-				This meeting (in English) will be online via MSTeams.
+				This meeting (in English) took place online via MSTeams.
               </p>
               <a href="./encontros_052026.html" class="event-link">More information</a>
             </div>
@@ -671,6 +712,11 @@ Contate-nos para ser um representante local / Contact us to be a local represent
     <h2>Participe / Join us</h2>
     <p>
       Veja como se envolver com a Associação / Get involved with our Association
+    </p>
+	<p>
+      Divulgue-nos! / Spread the word!
+	  Print the
+	  <a href="./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf" class="learn-more">Download</a>
     </p>
 	<hr>
 	<h2 class="centered-text">Torne-se membro / Become a member</h2>
@@ -803,6 +849,647 @@ Contate-nos para ser um representante local / Contact us to be a local represent
       // 4. Add "active" class to the clicked tab link
       event.currentTarget.classList.add('active');
     }
+  </script>
+
+
+  <!-- JAVASCRIPT FOR LANGUAGE SWITCHING; original source content and comments above are intentionally preserved -->
+  <script>
+const translations = {
+      pt: {
+        htmlLang: "pt-BR",
+        pageTitle: "Associação Acadêmica Belgo-Brasileira",
+        metaDescription: "Site oficial da AABBAV. Notícias, eventos e informações da associação.",
+        siteTitle: "Associação Acadêmica Belgo-Brasileira",
+        navMain: "Início",
+        navOrganisation: "Organização",
+        navActivities: "Atividades",
+        navGetInvolved: "Participe",
+        navNewsletter: "Boletim",
+        navOtherInfo: "Outras Informações",
+        homeTitle: "Associação Acadêmica Belgo-Brasileira",
+        homeMission: "A <strong>Associação Acadêmica Belgo-Brasileira (AABBAV)</strong> é uma entidade sem fins lucrativos voltada para fortalecer e apoiar a comunidade acadêmica brasileira na Bélgica e a comunidade acadêmica belga com relações com o Brasil. Nossa missão é promover o intercâmbio acadêmico, científico e cultural entre a Bélgica e o Brasil. Por meio de parcerias estratégicas, programas de desenvolvimento e atividades formativas, buscamos integrar estudantes, pesquisadores e profissionais, fomentando o crescimento educacional e social. Nosso compromisso é criar um ambiente de diálogo, respeito e cooperação que valorize a pluralidade e incentive a inovação e o bem-estar social, contribuindo para a consolidação de uma comunidade acadêmica cada vez mais conectada e engajada.",
+        homeVision: "Nossa visão é ser a principal referência de integração e troca de experiências entre os acadêmicos brasileiros residentes na Bélgica e os acadêmicos belgas com laços no Brasil. Almejamos ampliar horizontes, promovendo iniciativas que inspirem a inovação, fortaleçam os laços culturais e contribuam para o desenvolvimento social da comunidade.",
+        homeSupport: "A AABBAV conta com o apoio da <a href=\"https://www.gov.br/mre/pt-br/embaixada-bruxelas\">Embaixada do Brasil na Bélgica</a>.",
+        homeSabia: "A AABBAV é membro da <a href=\"https://www.redesabia.org\">Rede Sabiá</a>, uma rede da diáspora brasileira atuante em educação, ciência, tecnologia e inovação.",
+        footerWebmaster: "Webmaster: Luis Rocha. Atualizado em: 09.07.2026",
+        membersTitle: "Organização",
+        membersIntro: "A AABBAV é composta por um Comitê Executivo e por Membros Associados.",
+        executiveBoard: "Comitê Executivo",
+        rolePresident: "Presidente",
+        roleVicePresident: "Vice-Presidente",
+        roleAdministrativeDirector: "Diretor Administrativo",
+        roleEventsDirector: "Diretor de Eventos",
+        memberGustavo: "Dr Gustavo Duarte<br>Centro Belga de Energia Nuclear<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberLuana: "Dr Luana de Freitas Nascimento<br>Centro Belga de Energia Nuclear<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberGeorges: "Prof Dr Georges Martyn<br>Universidade de Gent<br>Universiteit Gent",
+        memberLuis: "Prof Dr Luis E C Rocha<br>Universidade de Gent<br>Universiteit Gent",
+        learnMore: "Saiba mais",
+        otherMembers: "Outros Membros",
+        belgiumContacts: "Representantes na Bélgica",
+        contactRepIntro: "Contate-nos para ser um representante local.",
+        contactSck: "Centro Belga de Energia Nuclear / Studiecentrum voor kernenergie / Centre d'étude de l'énergie nucléaire: Dr Luana F Nascimento",
+        contactBrussels: "Universidade Livre de Bruxelas / Vrije Universiteit Brussel: Prof Dr Lucas Melgaço",
+        contactGhent: "Universidade de Gent / Universiteit Gent: Prof Dr Luis E C Rocha",
+        luxembourgContacts: "Representantes no Luxemburgo",
+        contactLuxembourg: "University of Luxembourg / Universitéit Lëtzebuerg: Dr Demival Vasques Filho",
+        brazilContacts: "Representantes no Brasil",
+        contactBrazil: "Universidade de São Paulo: Prof Dr Edilaine Honório",
+        eventsTitle: "Eventos",
+        eventsIntro: "Fique por dentro dos nossos eventos e atividades.",
+        scientificEvents: "Científicos",
+        socioCulturalEvents: "Socio-culturais",
+        annual2026Date: "16 de outubro de 2026",
+        annual2026Title: "Reunião Anual da AABBAV 2026",
+        annual2026Description: "A reunião anual, em inglês, acontecerá na Embaixada do Brasil em Bruxelas.",
+        moreInformation: "Mais informações",
+        pastEventsTitle: "Eventos e Atividades Anteriores",
+        encontros2026Date: "5 de maio de 2026",
+        encontros2026Title: "Encontros",
+        encontros2026Description: "Este encontro, em inglês, aconteceu online via MS Teams.",
+        annual2025Date: "17 de outubro de 2025",
+        annual2025Title: "Reunião Anual da AABBAV 2025",
+        annual2025Description: "A reunião anual, em inglês, aconteceu na Embaixada do Brasil em Bruxelas.",
+        admin2025Date: "14 de abril de 2025",
+        admin2025Title: "Reunião Administrativa",
+        admin2025Description: "Encontro com o embaixador Sr João Mendes Pereira na Embaixada do Brasil em Bruxelas.",
+        network2024Date: "4 de dezembro de 2024",
+        network2024Title: "Evento da rede acadêmica belgo-brasileira",
+        network2024Description: "Encontro inicial na Embaixada do Brasil em Bruxelas para discutir a formação da rede acadêmica. Organizadores: Prof Arno Dal Ri Jr e Prof Georges Martyn.",
+        joinTitle: "Participe",
+        joinIntro: "Veja como se envolver com a Associação.",
+        spreadWord: "Divulgue-nos! Imprima o boletim: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
+        becomeMemberTitle: "Torne-se membro",
+        becomeMemberText: "Para tornar-se membro, é necessário estar associado a uma instituição acadêmica de ensino superior, como uma universidade ou centro de educação profissional, ou a um centro de pesquisa devidamente reconhecido pelo governo belga ou brasileiro. Entre em contato conosco usando seu email institucional. A participação é gratuita.<br><br><strong>Atenção:</strong> Não membros são bem-vindos às atividades de divulgação científica e cultural.",
+        emailListTitle: "Lista de emails",
+        emailListText: "Inscreva-se em nossa lista de emails. Mande um email em branco para <img src=\"figs/email subscribe AABB.gif\" alt=\"Email Subscribe\" style=\"height: 1.2em; vertical-align: middle;\"> com o assunto/tópico \"subscribe aabb SeuNome SeuSobrenome\".",
+        contactTitle: "Contato",
+        contactText: "Para mais informações sobre a AABBAV, mande um email para <img src=\"figs/email AABB.gif\" alt=\"Contato\" style=\"height: 1.2em; vertical-align: middle;\">.",
+        followTitle: "Siga-nos online",
+        newsletterTitle: "Boletim",
+        newsletterIntro: "Veja um resumo das nossas atividades.",
+        newsletterIssue1: "Boletim - Novembro de 2025",
+        download: "Download",
+        otherInfoTitle: "Outras Informações",
+        otherInfoIntro: "Em breve atualizaremos esta página com informações relevantes para a comunidade acadêmica brasileira na Bélgica e para belgas com interesse no Brasil.",
+        fwoDescription: "Agência de fomento da região Flamenga",
+        fnrsDescription: "Agência de fomento da região Valã",
+        euraxessDescription: "EURAXESS América Latina e Caribe",
+        sabiaDescription: "Rede Sabiá",
+        clickHere: "Clique aqui"
+      },
+
+      en: {
+        htmlLang: "en",
+        pageTitle: "Belgo-Brazilian Academic Association",
+        metaDescription: "Official AABBAV website. News, events, and information from the association.",
+        siteTitle: "Belgo-Brazilian Academic Association",
+        navMain: "Home",
+        navOrganisation: "Organisation",
+        navActivities: "Activities",
+        navGetInvolved: "Get Involved",
+        navNewsletter: "Newsletter",
+        navOtherInfo: "Other Info",
+        homeTitle: "Belgo-Brazilian Academic Association",
+        homeMission: "The <strong>Belgo-Brazilian Academic Association (AABBAV)</strong> is a non-profit organisation dedicated to strengthening and supporting the Brazilian academic community in Belgium and the Belgian academic community with links to Brazil. Our mission is to promote academic, scientific, and cultural exchange between Belgium and Brazil. Through strategic partnerships, development programmes, and training activities, we seek to connect students, researchers, and professionals, fostering educational and social growth. We are committed to creating an environment of dialogue, respect, and cooperation that values plurality and encourages innovation and social well-being, contributing to a more connected and engaged academic community.",
+        homeVision: "Our vision is to become the main reference point for integration and exchange of experience among Brazilian academics living in Belgium and Belgian academics with links to Brazil. We aim to broaden horizons by promoting initiatives that inspire innovation, strengthen cultural ties, and contribute to the social development of the community.",
+        homeSupport: "AABBAV has the support of the <a href=\"https://www.gov.br/mre/pt-br/embaixada-bruxelas\">Embassy of Brazil in Belgium</a>.",
+        homeSabia: "AABBAV is a member of <a href=\"https://www.redesabia.org\">Rede Sabiá</a>, a network for the Brazilian diaspora working in education, science, technology, and innovation.",
+        footerWebmaster: "Webmaster: Luis Rocha. Updated: 09.07.2026",
+        membersTitle: "Organisation",
+        membersIntro: "AABBAV is structured around an Executive Board and its Associated Members.",
+        executiveBoard: "Executive Board",
+        rolePresident: "President",
+        roleVicePresident: "Vice-President",
+        roleAdministrativeDirector: "Administrative Director",
+        roleEventsDirector: "Events Director",
+        memberGustavo: "Dr Gustavo Duarte<br>Belgian Nuclear Research Centre<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberLuana: "Dr Luana de Freitas Nascimento<br>Belgian Nuclear Research Centre<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberGeorges: "Prof Dr Georges Martyn<br>Ghent University<br>Universiteit Gent",
+        memberLuis: "Prof Dr Luis E C Rocha<br>Ghent University<br>Universiteit Gent",
+        learnMore: "Learn more",
+        otherMembers: "Other Members",
+        belgiumContacts: "Local Contacts in Belgium",
+        contactRepIntro: "Contact us to become a local representative.",
+        contactSck: "Belgian Nuclear Research Centre / Studiecentrum voor kernenergie / Centre d'étude de l'énergie nucléaire: Dr Luana F Nascimento",
+        contactBrussels: "Free University of Brussels / Vrije Universiteit Brussel: Prof Dr Lucas Melgaço",
+        contactGhent: "Ghent University / Universiteit Gent: Prof Dr Luis E C Rocha",
+        luxembourgContacts: "Local Contacts in Luxembourg",
+        contactLuxembourg: "University of Luxembourg / Universitéit Lëtzebuerg: Dr Demival Vasques Filho",
+        brazilContacts: "Local Contacts in Brazil",
+        contactBrazil: "University of São Paulo: Prof Dr Edilaine Honório",
+        eventsTitle: "Events",
+        eventsIntro: "Follow our events and activities.",
+        scientificEvents: "Scientific",
+        socioCulturalEvents: "Socio-cultural",
+        annual2026Date: "16 October 2026",
+        annual2026Title: "AABBAV Annual Meeting 2026",
+        annual2026Description: "The annual meeting, in English, will take place at the Embassy of Brazil in Brussels.",
+        moreInformation: "More information",
+        pastEventsTitle: "Previous Events and Activities",
+        encontros2026Date: "5 May 2026",
+        encontros2026Title: "Encontros",
+        encontros2026Description: "This meeting, in English, took place online via MS Teams.",
+        annual2025Date: "17 October 2025",
+        annual2025Title: "AABBAV Annual Meeting 2025",
+        annual2025Description: "The annual meeting, in English, took place at the Embassy of Brazil in Brussels.",
+        admin2025Date: "14 April 2025",
+        admin2025Title: "Administrative Meeting",
+        admin2025Description: "Meeting with Ambassador João Mendes Pereira at the Embassy of Brazil in Brussels.",
+        network2024Date: "4 December 2024",
+        network2024Title: "Belgo-Brazilian academic network event",
+        network2024Description: "Initial meeting at the Embassy of Brazil in Brussels to discuss the formation of the academic network. Organisers: Prof Arno Dal Ri Jr and Prof Georges Martyn.",
+        joinTitle: "Get Involved",
+        joinIntro: "See how to get involved with the Association.",
+        spreadWord: "Spread the word! Print the newsletter: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
+        becomeMemberTitle: "Become a member",
+        becomeMemberText: "To become a member, you must be affiliated with a higher education academic institution, such as a university or university of applied sciences, or with a research centre duly recognised by the Belgian or Brazilian governments. Contact us using your institutional email address. Participation is free.<br><br><strong>Note:</strong> Non-members are welcome to attend our scientific and cultural outreach activities.",
+        emailListTitle: "Email list",
+        emailListText: "Sign up for our mailing list. Send a blank email to <img src=\"figs/email subscribe AABB.gif\" alt=\"Email Subscribe\" style=\"height: 1.2em; vertical-align: middle;\"> with the subject \"subscribe aabb FirstName LastName\".",
+        contactTitle: "Contact",
+        contactText: "For more information about AABBAV, send an email to <img src=\"figs/email AABB.gif\" alt=\"Contact\" style=\"height: 1.2em; vertical-align: middle;\">.",
+        followTitle: "Follow us online",
+        newsletterTitle: "Newsletter",
+        newsletterIntro: "Check out a summary of our activities.",
+        newsletterIssue1: "Newsletter - November 2025",
+        download: "Download",
+        otherInfoTitle: "Other Information",
+        otherInfoIntro: "This page will soon be updated with information relevant to the Brazilian academic community in Belgium and to Belgian academics with an interest in Brazil.",
+        fwoDescription: "Funding agency for the Flemish region",
+        fnrsDescription: "Funding agency for the Walloon region",
+        euraxessDescription: "EURAXESS Latin America and the Caribbean",
+        sabiaDescription: "Rede Sabiá",
+        clickHere: "Click here"
+      },
+
+      nl: {
+        htmlLang: "nl",
+        pageTitle: "Belgisch-Braziliaanse Academische Vereniging",
+        metaDescription: "Officiële website van AABBAV. Nieuws, evenementen en informatie van de vereniging.",
+        siteTitle: "Belgisch-Braziliaanse Academische Vereniging",
+        navMain: "Start",
+        navOrganisation: "Organisatie",
+        navActivities: "Activiteiten",
+        navGetInvolved: "Doe mee",
+        navNewsletter: "Nieuwsbrief",
+        navOtherInfo: "Andere info",
+        homeTitle: "Belgisch-Braziliaanse Academische Vereniging",
+        homeMission: "De <strong>Belgisch-Braziliaanse Academische Vereniging (AABBAV)</strong> is een non-profitorganisatie die zich inzet voor het versterken en ondersteunen van de Braziliaanse academische gemeenschap in België en de Belgische academische gemeenschap met banden met Brazilië. Onze missie is het bevorderen van academische, wetenschappelijke en culturele uitwisseling tussen België en Brazilië. Via strategische partnerschappen, ontwikkelingsprogramma's en vormende activiteiten streven we ernaar studenten, onderzoekers en professionals met elkaar te verbinden en educatieve en sociale groei te stimuleren. Wij willen een omgeving van dialoog, respect en samenwerking creëren die pluraliteit waardeert en innovatie en sociaal welzijn aanmoedigt, en zo bijdragen aan een steeds meer verbonden en betrokken academische gemeenschap.",
+        homeVision: "Onze visie is om de belangrijkste referentie te worden voor integratie en ervaringsuitwisseling tussen Braziliaanse academici die in België wonen en Belgische academici met banden met Brazilië. We willen horizonten verbreden door initiatieven te bevorderen die innovatie inspireren, culturele banden versterken en bijdragen aan de sociale ontwikkeling van de gemeenschap.",
+        homeSupport: "AABBAV krijgt steun van de <a href=\"https://www.gov.br/mre/pt-br/embaixada-bruxelas\">Ambassade van Brazilië in België</a>.",
+        homeSabia: "AABBAV is lid van <a href=\"https://www.redesabia.org\">Rede Sabiá</a>, een netwerk voor de Braziliaanse diaspora actief in onderwijs, wetenschap, technologie en innovatie.",
+        footerWebmaster: "Webmaster: Luis Rocha. Bijgewerkt: 09.07.2026",
+        membersTitle: "Organisatie",
+        membersIntro: "AABBAV bestaat uit een Uitvoerend Comité en Geassocieerde Leden.",
+        executiveBoard: "Uitvoerend Comité",
+        rolePresident: "Voorzitter",
+        roleVicePresident: "Vicevoorzitter",
+        roleAdministrativeDirector: "Administratief directeur",
+        roleEventsDirector: "Directeur evenementen",
+        memberGustavo: "Dr Gustavo Duarte<br>Belgisch Studiecentrum voor Kernenergie<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberLuana: "Dr Luana de Freitas Nascimento<br>Belgisch Studiecentrum voor Kernenergie<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberGeorges: "Prof Dr Georges Martyn<br>Universiteit Gent",
+        memberLuis: "Prof Dr Luis E C Rocha<br>Universiteit Gent",
+        learnMore: "Meer informatie",
+        otherMembers: "Andere leden",
+        belgiumContacts: "Lokale contactpersonen in België",
+        contactRepIntro: "Neem contact met ons op om lokale vertegenwoordiger te worden.",
+        contactSck: "Belgisch Studiecentrum voor Kernenergie / Studiecentrum voor kernenergie / Centre d'étude de l'énergie nucléaire: Dr Luana F Nascimento",
+        contactBrussels: "Vrije Universiteit Brussel: Prof Dr Lucas Melgaço",
+        contactGhent: "Universiteit Gent: Prof Dr Luis E C Rocha",
+        luxembourgContacts: "Lokale contactpersonen in Luxemburg",
+        contactLuxembourg: "University of Luxembourg / Universitéit Lëtzebuerg: Dr Demival Vasques Filho",
+        brazilContacts: "Lokale contactpersonen in Brazilië",
+        contactBrazil: "Universidade de São Paulo: Prof Dr Edilaine Honório",
+        eventsTitle: "Evenementen",
+        eventsIntro: "Volg onze evenementen en activiteiten.",
+        scientificEvents: "Wetenschappelijk",
+        socioCulturalEvents: "Sociaal-cultureel",
+        annual2026Date: "16 oktober 2026",
+        annual2026Title: "AABBAV Jaarvergadering 2026",
+        annual2026Description: "De jaarvergadering, in het Engels, vindt plaats in de Ambassade van Brazilië in Brussel.",
+        moreInformation: "Meer informatie",
+        pastEventsTitle: "Eerdere evenementen en activiteiten",
+        encontros2026Date: "5 mei 2026",
+        encontros2026Title: "Encontros",
+        encontros2026Description: "Deze bijeenkomst, in het Engels, vond online plaats via MS Teams.",
+        annual2025Date: "17 oktober 2025",
+        annual2025Title: "AABBAV Jaarvergadering 2025",
+        annual2025Description: "De jaarvergadering, in het Engels, vond plaats in de Ambassade van Brazilië in Brussel.",
+        admin2025Date: "14 april 2025",
+        admin2025Title: "Administratieve vergadering",
+        admin2025Description: "Bijeenkomst met ambassadeur João Mendes Pereira in de Ambassade van Brazilië in Brussel.",
+        network2024Date: "4 december 2024",
+        network2024Title: "Belgisch-Braziliaans academisch netwerkevenement",
+        network2024Description: "Eerste bijeenkomst in de Ambassade van Brazilië in Brussel om de vorming van het academische netwerk te bespreken. Organisatoren: Prof Arno Dal Ri Jr en Prof Georges Martyn.",
+        joinTitle: "Doe mee",
+        joinIntro: "Ontdek hoe u bij de Vereniging betrokken kunt raken.",
+        spreadWord: "Verspreid het nieuws! Druk de nieuwsbrief af: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
+        becomeMemberTitle: "Lid worden",
+        becomeMemberText: "Om lid te worden, moet u verbonden zijn aan een academische instelling voor hoger onderwijs, zoals een universiteit of hogeschool, of aan een onderzoekscentrum dat officieel erkend is door de Belgische of Braziliaanse overheid. Neem contact met ons op via uw institutionele e-mailadres. Deelname is gratis.<br><br><strong>Let op:</strong> Niet-leden zijn welkom bij onze wetenschappelijke en culturele publieksactiviteiten.",
+        emailListTitle: "E-maillijst",
+        emailListText: "Schrijf u in op onze e-maillijst. Stuur een lege e-mail naar <img src=\"figs/email subscribe AABB.gif\" alt=\"Email Subscribe\" style=\"height: 1.2em; vertical-align: middle;\"> met als onderwerp \"subscribe aabb Voornaam Achternaam\".",
+        contactTitle: "Contact",
+        contactText: "Voor meer informatie over AABBAV kunt u een e-mail sturen naar <img src=\"figs/email AABB.gif\" alt=\"Contact\" style=\"height: 1.2em; vertical-align: middle;\">.",
+        followTitle: "Volg ons online",
+        newsletterTitle: "Nieuwsbrief",
+        newsletterIntro: "Bekijk een samenvatting van onze activiteiten.",
+        newsletterIssue1: "Nieuwsbrief - november 2025",
+        download: "Download",
+        otherInfoTitle: "Andere informatie",
+        otherInfoIntro: "Deze pagina wordt binnenkort bijgewerkt met informatie die relevant is voor de Braziliaanse academische gemeenschap in België en voor Belgische academici met interesse in Brazilië.",
+        fwoDescription: "Financieringsagentschap voor de Vlaamse regio",
+        fnrsDescription: "Financieringsagentschap voor de Waalse regio",
+        euraxessDescription: "EURAXESS Latijns-Amerika en de Caraïben",
+        sabiaDescription: "Rede Sabiá",
+        clickHere: "Klik hier"
+      },
+
+      fr: {
+        htmlLang: "fr",
+        pageTitle: "Association Académique Belgo-Brésilienne",
+        metaDescription: "Site officiel de l'AABBAV. Actualités, événements et informations de l'association.",
+        siteTitle: "Association Académique Belgo-Brésilienne",
+        navMain: "Accueil",
+        navOrganisation: "Organisation",
+        navActivities: "Activités",
+        navGetInvolved: "Participer",
+        navNewsletter: "Bulletin",
+        navOtherInfo: "Autres infos",
+        homeTitle: "Association Académique Belgo-Brésilienne",
+        homeMission: "L'<strong>Association Académique Belgo-Brésilienne (AABBAV)</strong> est une organisation à but non lucratif visant à renforcer et à soutenir la communauté académique brésilienne en Belgique ainsi que la communauté académique belge ayant des liens avec le Brésil. Notre mission est de promouvoir les échanges académiques, scientifiques et culturels entre la Belgique et le Brésil. Grâce à des partenariats stratégiques, des programmes de développement et des activités de formation, nous cherchons à mettre en relation étudiants, chercheurs et professionnels, en favorisant la croissance éducative et sociale. Nous nous engageons à créer un environnement de dialogue, de respect et de coopération qui valorise la pluralité et encourage l'innovation et le bien-être social, contribuant ainsi à une communauté académique toujours plus connectée et engagée.",
+        homeVision: "Notre vision est de devenir la principale référence en matière d'intégration et d'échange d'expériences entre les universitaires brésiliens résidant en Belgique et les universitaires belges ayant des liens avec le Brésil. Nous aspirons à élargir les horizons en promouvant des initiatives qui inspirent l'innovation, renforcent les liens culturels et contribuent au développement social de la communauté.",
+        homeSupport: "L'AABBAV bénéficie du soutien de l'<a href=\"https://www.gov.br/mre/pt-br/embaixada-bruxelas\">Ambassade du Brésil en Belgique</a>.",
+        homeSabia: "L'AABBAV est membre de <a href=\"https://www.redesabia.org\">Rede Sabiá</a>, un réseau de la diaspora brésilienne active dans l'éducation, la science, la technologie et l'innovation.",
+        footerWebmaster: "Webmaster : Luis Rocha. Mis à jour le : 09.07.2026",
+        membersTitle: "Organisation",
+        membersIntro: "L'AABBAV est structurée autour d'un Comité exécutif et de Membres associés.",
+        executiveBoard: "Comité exécutif",
+        rolePresident: "Président",
+        roleVicePresident: "Vice-présidente",
+        roleAdministrativeDirector: "Directeur administratif",
+        roleEventsDirector: "Directeur des événements",
+        memberGustavo: "Dr Gustavo Duarte<br>Centre belge d'étude de l'énergie nucléaire<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberLuana: "Dr Luana de Freitas Nascimento<br>Centre belge d'étude de l'énergie nucléaire<br>Studiecentrum voor kernenergie<br>Centre d'étude de l'énergie nucléaire",
+        memberGeorges: "Prof Dr Georges Martyn<br>Université de Gand<br>Universiteit Gent",
+        memberLuis: "Prof Dr Luis E C Rocha<br>Université de Gand<br>Universiteit Gent",
+        learnMore: "En savoir plus",
+        otherMembers: "Autres membres",
+        belgiumContacts: "Contacts locaux en Belgique",
+        contactRepIntro: "Contactez-nous pour devenir représentant local.",
+        contactSck: "Centre belge d'étude de l'énergie nucléaire / Studiecentrum voor kernenergie / Centre d'étude de l'énergie nucléaire : Dr Luana F Nascimento",
+        contactBrussels: "Université libre de Bruxelles / Vrije Universiteit Brussel : Prof Dr Lucas Melgaço",
+        contactGhent: "Université de Gand / Universiteit Gent : Prof Dr Luis E C Rocha",
+        luxembourgContacts: "Contacts locaux au Luxembourg",
+        contactLuxembourg: "University of Luxembourg / Universitéit Lëtzebuerg : Dr Demival Vasques Filho",
+        brazilContacts: "Contacts locaux au Brésil",
+        contactBrazil: "Universidade de São Paulo : Prof Dr Edilaine Honório",
+        eventsTitle: "Événements",
+        eventsIntro: "Suivez nos événements et activités.",
+        scientificEvents: "Scientifiques",
+        socioCulturalEvents: "Socio-culturels",
+        annual2026Date: "16 octobre 2026",
+        annual2026Title: "Réunion annuelle de l'AABBAV 2026",
+        annual2026Description: "La réunion annuelle, en anglais, aura lieu à l'Ambassade du Brésil à Bruxelles.",
+        moreInformation: "Plus d'informations",
+        pastEventsTitle: "Événements et activités précédents",
+        encontros2026Date: "5 mai 2026",
+        encontros2026Title: "Encontros",
+        encontros2026Description: "Cette rencontre, en anglais, s'est tenue en ligne via MS Teams.",
+        annual2025Date: "17 octobre 2025",
+        annual2025Title: "Réunion annuelle de l'AABBAV 2025",
+        annual2025Description: "La réunion annuelle, en anglais, s'est tenue à l'Ambassade du Brésil à Bruxelles.",
+        admin2025Date: "14 avril 2025",
+        admin2025Title: "Réunion administrative",
+        admin2025Description: "Rencontre avec l'ambassadeur João Mendes Pereira à l'Ambassade du Brésil à Bruxelles.",
+        network2024Date: "4 décembre 2024",
+        network2024Title: "Événement du réseau académique belgo-brésilien",
+        network2024Description: "Rencontre initiale à l'Ambassade du Brésil à Bruxelles afin de discuter de la formation du réseau académique. Organisateurs : Prof Arno Dal Ri Jr et Prof Georges Martyn.",
+        joinTitle: "Participer",
+        joinIntro: "Découvrez comment vous impliquer dans l'Association.",
+        spreadWord: "Faites passer le message ! Imprimez le bulletin : <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Télécharger</a>",
+        becomeMemberTitle: "Devenir membre",
+        becomeMemberText: "Pour devenir membre, vous devez être affilié à un établissement académique d'enseignement supérieur, tel qu'une université ou une haute école, ou à un centre de recherche dûment reconnu par les gouvernements belge ou brésilien. Contactez-nous avec votre adresse e-mail institutionnelle. La participation est gratuite.<br><br><strong>Attention :</strong> Les non-membres sont les bienvenus à nos activités de diffusion scientifique et culturelle.",
+        emailListTitle: "Liste de diffusion",
+        emailListText: "Inscrivez-vous à notre liste de diffusion. Envoyez un e-mail vide à <img src=\"figs/email subscribe AABB.gif\" alt=\"Email Subscribe\" style=\"height: 1.2em; vertical-align: middle;\"> avec l'objet \"subscribe aabb Prénom Nom\".",
+        contactTitle: "Contact",
+        contactText: "Pour plus d'informations sur l'AABBAV, envoyez un e-mail à <img src=\"figs/email AABB.gif\" alt=\"Contact\" style=\"height: 1.2em; vertical-align: middle;\">.",
+        followTitle: "Suivez-nous en ligne",
+        newsletterTitle: "Bulletin",
+        newsletterIntro: "Consultez un résumé de nos activités.",
+        newsletterIssue1: "Bulletin - novembre 2025",
+        download: "Télécharger",
+        otherInfoTitle: "Autres informations",
+        otherInfoIntro: "Cette page sera bientôt mise à jour avec des informations pertinentes pour la communauté académique brésilienne en Belgique et pour les universitaires belges ayant un intérêt pour le Brésil.",
+        fwoDescription: "Agence de financement de la région flamande",
+        fnrsDescription: "Agence de financement de la région wallonne",
+        euraxessDescription: "EURAXESS Amérique latine et Caraïbes",
+        sabiaDescription: "Rede Sabiá",
+        clickHere: "Cliquez ici"
+      }
+    };
+
+    function setText(selector, value) {
+      const element = document.querySelector(selector);
+      if (element && value !== undefined) element.textContent = value;
+    }
+
+    function section(selector, html) {
+      const element = document.querySelector(selector);
+      if (element) element.innerHTML = html;
+    }
+
+    function renderContent(dictionary) {
+      setText('header h1', dictionary.siteTitle);
+      setText('nav a[href="#index"]', dictionary.navMain);
+      setText('nav a[href="#members"]', dictionary.navOrganisation);
+      setText('nav a[href="#events"]', dictionary.navActivities);
+      setText('nav a[href="#participe"]', dictionary.navGetInvolved);
+      setText('nav a[href="#boletim"]', dictionary.navNewsletter);
+      setText('nav a[href="#informacoes"]', dictionary.navOtherInfo);
+
+      section('#index', `
+        <h2 style="text-align: center;">${dictionary.homeTitle}</h2>
+        <br>
+        <p>${dictionary.homeMission}</p>
+        <br>
+        <p>${dictionary.homeVision}</p>
+        <br><br>
+        ${dictionary.homeSupport}
+        <br>
+        ${dictionary.homeSabia}
+        <br>
+        <hr>
+        ${dictionary.footerWebmaster}
+      `);
+
+      section('#members', `
+        <h2>${dictionary.membersTitle}</h2>
+        <p>${dictionary.membersIntro}</p>
+
+        <h2 class="centered-text">${dictionary.executiveBoard}</h2>
+        <hr>
+
+        <div class="members-grid">
+          <!-- Member Card 1 -->
+          <div class="member-card">
+            <img src="./figs/gtd.jpg?text=Gustavo Duarte" alt="Gustavo Duarte" />
+            <h3>${dictionary.rolePresident}</h3>
+            <p>${dictionary.memberGustavo}</p>
+            <a href="https://www.linkedin.com/in/gustavo-turqueto-duarte-1b924465/" class="learn-more">${dictionary.learnMore}</a>
+          </div>
+
+          <!-- Member Card 2 -->
+          <div class="member-card">
+            <img src="./figs/luana.jpg?text=Luana Nascimento" alt="Luana Nascimento" />
+            <h3>${dictionary.roleVicePresident}</h3>
+            <p>${dictionary.memberLuana}</p>
+            <a href="https://www.linkedin.com/in/luana-f-nascimento-75a868b8/" class="learn-more">${dictionary.learnMore}</a>
+          </div>
+
+          <!-- Member Card 3 -->
+          <div class="member-card">
+            <img src="./figs/UTF-8GeorgesMartyn.jpg?text=Georges Martyn" alt="Georges Martyn" />
+            <h3>${dictionary.roleAdministrativeDirector}</h3>
+            <p>${dictionary.memberGeorges}</p>
+            <a href="https://www.rechtsgeschiedenis.be" class="learn-more">${dictionary.learnMore}</a>
+          </div>
+
+          <!-- Member Card 5 -->
+          <div class="member-card">
+            <img src="./figs/Luis-Rocha-30.jpg?text=Luis Rocha" alt="Luis E C Rocha" />
+            <h3>${dictionary.roleEventsDirector}</h3>
+            <p>${dictionary.memberLuis}</p>
+            <a href="https://www.csi.ugent.be" class="learn-more">${dictionary.learnMore}</a>
+          </div>
+        </div>
+
+        <hr>
+        <h2 class="centered-text">${dictionary.otherMembers}</h2>
+        <hr>
+        <p>Dr Ana Vaniqui - SCK CEN</p>
+        <p>Isabela Maria Rosal - KULeuven</p>
+        <p>Dr Leonardo Martin - UAntwerpen</p>
+        <p>Dr Thais Lemos Silva - Instituut voor Tropische Geneeskunde</p>
+
+        <hr>
+        <h2 class="centered-text">${dictionary.belgiumContacts}</h2>
+        <hr>
+        ${dictionary.contactRepIntro}
+        <p>${dictionary.contactSck}</p>
+        <p>${dictionary.contactBrussels}</p>
+        <p>${dictionary.contactGhent}</p>
+
+        <hr>
+        <h2 class="centered-text">${dictionary.luxembourgContacts}</h2>
+        <hr>
+        <p>${dictionary.contactLuxembourg}</p>
+
+        <hr>
+        <h2 class="centered-text">${dictionary.brazilContacts}</h2>
+        <hr>
+        <p>${dictionary.contactBrazil}</p>
+      `);
+
+      section('#events', `
+        <h2>${dictionary.eventsTitle}</h2>
+        <p>${dictionary.eventsIntro}</p>
+
+        <div class="event-categories">
+          <!-- SCIENTIFIC EVENTS -->
+          <div class="event-category">
+            <h3>${dictionary.scientificEvents}</h3>
+            <div class="event-list">
+              <!-- Event 1 -->
+              <div class="event-item">
+                <div class="event-date">${dictionary.annual2026Date}</div>
+                <div class="event-info">
+                  <h4>${dictionary.annual2026Title}</h4>
+                  <p>${dictionary.annual2026Description}</p>
+                  <a href="./reuniao_anual_2026.html" class="event-link">${dictionary.moreInformation}</a>
+                </div>
+              </div>
+              <!-- Event 2 -->
+            </div>
+          </div>
+
+          <!-- EDUCATIONAL EVENTS -->
+          <div class="event-category">
+            <h3>${dictionary.socioCulturalEvents}</h3>
+            <div class="event-list">
+              <!-- Event 1 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST EVENTS -->
+        <h2 style="margin-top: 3rem;">${dictionary.pastEventsTitle}</h2>
+        <div class="event-categories">
+          <div class="event-category">
+            <div class="event-list">
+              <!-- Past Event 4 -->
+              <div class="event-item">
+                <div class="event-date">${dictionary.encontros2026Date}</div>
+                <div class="event-info">
+                  <h4>${dictionary.encontros2026Title}</h4>
+                  <p>${dictionary.encontros2026Description}</p>
+                  <a href="./encontros_052026.html" class="event-link">${dictionary.moreInformation}</a>
+                </div>
+              </div>
+
+              <!-- Past Event 3 -->
+              <div class="event-item">
+                <div class="event-date">${dictionary.annual2025Date}</div>
+                <div class="event-info">
+                  <h4>${dictionary.annual2025Title}</h4>
+                  <p>${dictionary.annual2025Description}</p>
+                  <a href="./reuniao_anual_2025.html" class="event-link">${dictionary.moreInformation}</a>
+                </div>
+              </div>
+
+              <!-- Past Event 2 -->
+              <div class="event-item">
+                <div class="event-date">${dictionary.admin2025Date}</div>
+                <div class="event-info">
+                  <h4>${dictionary.admin2025Title}</h4>
+                  <p>${dictionary.admin2025Description}</p>
+                </div>
+              </div>
+
+              <!-- Past Event 1 -->
+              <div class="event-item">
+                <div class="event-date">${dictionary.network2024Date}</div>
+                <div class="event-info">
+                  <h4>${dictionary.network2024Title}</h4>
+                  <p>${dictionary.network2024Description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- You can add more event-category blocks if you want separate groupings for past events -->
+        </div>
+      `);
+
+      section('#participe', `
+        <h2>${dictionary.joinTitle}</h2>
+        <p>${dictionary.joinIntro}</p>
+        <p>${dictionary.spreadWord}</p>
+        <hr>
+        <h2 class="centered-text">${dictionary.becomeMemberTitle}</h2>
+        <hr>
+        <p>${dictionary.becomeMemberText}</p>
+        <hr>
+        <h2 class="centered-text">${dictionary.emailListTitle}</h2>
+        <hr>
+        <p>${dictionary.emailListText}</p>
+        <hr>
+        <h2 class="centered-text">${dictionary.contactTitle}</h2>
+        <hr>
+        <p>${dictionary.contactText}</p>
+
+        <h2 class="centered-text">${dictionary.followTitle}</h2>
+        <hr>
+        <p class="centered-text" style="display: flex; justify-content: center; gap: 60px; text-align: center;">
+          <span>
+            <br>
+            <img src="figs/qr-code_linkedin.png" alt="LinkedIn QR Code" style="height: 120px; vertical-align: middle;">
+            <br>
+            <a href="https://www.linkedin.com/in/aabb-associa%C3%A7%C3%A3o-acad%C3%AAmica-belgo-brasileira-2536a2377/" target="_blank">LinkedIn</a>
+            <br><br>
+          </span>
+          <span>
+            <br>
+            <img src="figs/qr-code_instagram.png" alt="Instagram QR Code" style="height: 120px; vertical-align: middle;">
+            <br>
+            <a href="https://www.instagram.com/academia.belgobr" target="_blank">Instagram</a>
+            <br><br>
+          </span>
+        </p>
+      `);
+
+      section('#boletim', `
+        <h2>${dictionary.newsletterTitle}</h2>
+        <p>${dictionary.newsletterIntro}</p>
+
+        <div class="publication-list">
+          <!-- Publication 1 -->
+          <div class="boletim">
+            <h3 class="publication-title">${dictionary.newsletterIssue1}</h3>
+            <a href="./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf" class="learn-more">${dictionary.download}</a>
+          </div>
+        </div>
+      `);
+
+      section('#informacoes', `
+        <h2>${dictionary.otherInfoTitle}</h2>
+        <p>${dictionary.otherInfoIntro}</p>
+
+        <div class="publication-list">
+          <!-- Publication 1 -->
+          <div class="publication">
+            <h3 class="publication-title">FWO</h3>
+            <p class="publication-authors">${dictionary.fwoDescription}</p>
+            <a href="https://www.fwo.be" class="learn-more">${dictionary.clickHere}</a>
+          </div>
+          <div class="publication">
+            <h3 class="publication-title">FNRS</h3>
+            <p class="publication-authors">${dictionary.fnrsDescription}</p>
+            <a href="https://www.frs-fnrs.be" class="learn-more">${dictionary.clickHere}</a>
+          </div>
+          <div class="publication">
+            <h3 class="publication-title">EURAXESS</h3>
+            <p class="publication-authors">${dictionary.euraxessDescription}</p>
+            <a href="https://euraxess.ec.europa.eu/worldwide/lac" class="learn-more">${dictionary.clickHere}</a>
+          </div>
+          <div class="publication">
+            <h3 class="publication-title">Rede Sabiá</h3>
+            <p class="publication-authors">${dictionary.sabiaDescription}</p>
+            <a href="https://www.redesabia.org" class="learn-more">${dictionary.clickHere}</a>
+          </div>
+
+          <!-- Publication 2 -->
+          <!-- Add more publications as needed -->
+        </div>
+      `);
+    }
+
+    function setLanguage(lang) {
+      const selectedLanguage = translations[lang] ? lang : 'pt';
+      const dictionary = translations[selectedLanguage];
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.pageTitle;
+
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', dictionary.metaDescription);
+      }
+
+      renderContent(dictionary);
+
+      document.querySelectorAll('[data-lang-button]').forEach(button => {
+        button.classList.toggle('active-language', button.getAttribute('data-lang-button') === selectedLanguage);
+      });
+
+      localStorage.setItem('aabbav-language', selectedLanguage);
+    }
+
+    function getInitialLanguage() {
+      const savedLanguage = localStorage.getItem('aabbav-language');
+      if (translations[savedLanguage]) {
+        return savedLanguage;
+      }
+
+      const browserLanguage = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (browserLanguage.startsWith('pt')) return 'pt';
+      if (browserLanguage.startsWith('nl')) return 'nl';
+      if (browserLanguage.startsWith('fr')) return 'fr';
+      if (browserLanguage.startsWith('en')) return 'en';
+      return 'pt';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(getInitialLanguage());
+    });
   </script>
 
 </body>
