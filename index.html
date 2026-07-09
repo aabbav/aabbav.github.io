@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -366,7 +363,7 @@
 
   <!-- HEADER (TITLE + NAV) -->
   <header>
-    <h1>Associação Acadêmica Belgo Brasileira</h1>
+    <h1>Associação Acadêmica Belgo-Brasileira</h1>
 
     <div class="language-switcher" aria-label="Language selector">
       <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
@@ -376,456 +373,33 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#index" class="active" onclick="openTab(event, 'index')">Main</a></li>
-        <li><a href="#members" onclick="openTab(event, 'members')">Organisation</a></li>
-        <li><a href="#events" onclick="openTab(event, 'events')">Activities</a></li>
-		<li><a href="#participe" onclick="openTab(event, 'participe')">Get Involved</a></li>
-		<li><a href="#boletim" onclick="openTab(event, 'boletim')">Newsletter</a></li>
-		<li><a href="#informacoes" onclick="openTab(event, 'informacoes')">Other Info</a></li>
+        <li><a href="#index" class="active" onclick="openTab(event, 'index')">Início</a></li>
+        <li><a href="#members" onclick="openTab(event, 'members')">Organização</a></li>
+        <li><a href="#events" onclick="openTab(event, 'events')">Atividades</a></li>
+        <li><a href="#participe" onclick="openTab(event, 'participe')">Participe</a></li>
+        <li><a href="#boletim" onclick="openTab(event, 'boletim')">Boletim</a></li>
+        <li><a href="#informacoes" onclick="openTab(event, 'informacoes')">Outras Informações</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- INDEX TAB -->
-  <section id="index" class="tab-content active-content">
-    <h2 style="text-align: center;">Associação Acadêmica Belgo Brasileira</h2>
-    <br>
-    <p>
-      A <strong>Associação Acadêmica Belgo Brasileira (AABB)</strong> é uma é uma entidade sem fins lucrativos voltada para 
-	    fortalecer e apoiar a comunidade acadêmica brasileira na Bélgica e a comunidade acadêmica belga com relações com o Brasil. 
-	    Nossa missão é promover o intercâmbio acadêmico, científico e cultural entre a Bélgica e o Brasil. Por meio de parcerias 
-	    estratégicas, programas de desenvolvimento e atividades formativas, buscamos integrar estudantes, pesquisadores e 
-	    profissionais, fomentando o crescimento educacional e social. Nosso compromisso é criar um ambiente de diálogo, respeito e 
-	    cooperação que valorize a pluralidade e incentive a inovação e o bem-estar social, contribuindo para a consolidação de uma 
-	    comunidade acadêmica cada vez mais conectada e engajada.	    
-    </p>
-    <br>
-    <p>
-      Nossa visão é ser a principal referência de integração e troca de experiências entre os acadêmicos brasileiros residentes
-      na Bélgica e de acadêmicos belgas com laços no Brasil. Almejamos ampliar horizontes, promovendo iniciativas que inspirem a 
-      inovação, fortaleçam os laços culturais e contribuam para o desenvolvimento social da comunidade.
-    </p>  
-	  <!-- Logos in three rows:
-         First row: 1 logo
-         Second row: 3 logos
-         Third row: 3 logos -->
-<!--    <div class="logo-row">
-  		<img src="./figs/logo_fwo.png" alt="Logo FWO" />
-    </div>
-
-    <div class="logo-row">
-	        <img src="./figs/logo_fwo.png" alt="Logo UGent" style="width: 50%; height: auto;"/>
-  		<img src="./figs/logo_UGent.png" alt="Logo UGent" style="width: 50%; height: auto;"/>
-  		<img src="./figs/logo_KULeuven.png" alt="Logo KULeuven" style="width: 50%; height: auto;"/>
- 		<img src="./figs/logo_XXX.png" alt="Logo UNamur" style="width: 50%; height: auto;"/>
-    </div>
-    <div class="logo-row">
-  		<img src="./figs/logo_ULB.png" alt="Logo ULB" style="width: 50%; height: auto;"/>
-  		<img src="./figs/logo_UNamur.png" alt="Logo UNamur" style="width: 40%; height: auto;"/>
-  		<img src="./figs/logo_UCL.jpg" alt="Logo UCL" style="width: 50%; height: auto;"/>
-    </div>
--->
-    <br><br>
-    <h2 style="text-align: center;">Belgisch-Braziliaanse Academische Vereniging</h2>
-    <br>
-    <p>
-    De <strong>Belgisch-Braziliaanse Academische Vereniging (BBAV)</strong> is een non-profitorganisatie die zich inzet voor het versterken 
-    en ondersteunen van de Braziliaanse academische gemeenschap in België en de Belgische academische gemeenschap met banden 
-    met Brazilië. Onze missie is het bevorderen van academische, wetenschappelijke en culturele uitwisseling tussen België en 
-    Brazilië. Via strategische partnerschappen, ontwikkelingsprogramma’s en vormende activiteiten streven we ernaar studenten, 
-    onderzoekers en professionals te integreren, met als doel educatieve en sociale groei te stimuleren. Onze inzet is om een 
-    omgeving van dialoog, respect en samenwerking te creëren die pluraliteit waardeert en innovatie en sociaal welzijn aanmoedigt, 
-    en zo bij te dragen aan de opbouw van een steeds meer verbonden en betrokken academische gemeenschap.
-    </p>
-    <br>
-    <p>
-    Onze visie is om de voornaamste referentie te zijn voor integratie en ervaringsuitwisseling tussen Braziliaanse academici 
-    die in België wonen, en Belgische academici met banden in Brazilië. We streven ernaar om horizonten te verbreden door 
-    initiatieven te promoten die innovatie inspireren, culturele banden versterken en bijdragen aan de sociale ontwikkeling 
-    van de gemeenschap.
-    </p>
-    <br>
-    <h2 style="text-align: center;">Association Académique Belgo-Brésilienne</h2>
-    <br>
-    <p>
-    <strong>L'Association Académique Belgo-Brésilienne (AABB)</strong> est une organisation à but non lucratif visant à renforcer et à soutenir 
-    la communauté académique brésilienne en Belgique ainsi que la communauté académique belge ayant des liens avec le Brésil. 
-    Notre mission est de promouvoir les échanges académiques, scientifiques et culturels entre la Belgique et le Brésil. À 
-    travers des partenariats stratégiques, des programmes de développement et des activités formatives, nous cherchons à 
-    intégrer les étudiants, chercheurs et professionnels, en favorisant la croissance éducative et sociale. Notre engagement 
-    est de créer un environnement de dialogue, de respect et de coopération, qui valorise la pluralité et encourage 
-    l’innovation ainsi que le bien-être social, contribuant ainsi à la consolidation d’une communauté académique toujours 
-    plus connectée et engagée.
-    </p>
-    <br>
-    <p>
-    Notre vision est de devenir la principale référence en matière d’intégration et d’échange d’expériences entre les 
-    universitaires brésiliens résidant en Belgique et les universitaires belges ayant des liens avec le Brésil. Nous aspirons 
-    à élargir les horizons en promouvant des initiatives qui inspirent l’innovation, renforcent les liens culturels et 
-    contribuent au développement social de la communauté.
-    </p>
-    <br><br>
-    AABBAV has the support of the <a href="https://www.gov.br/mre/pt-br/embaixada-bruxelas">Embassy of Brazil in Belgium</a>.
-	<br>
-    AABBAV is a member of <a href="https://www.redesabia.org">Rede Sabiá</a>, a network for the Brazilian diaspora working in education, science, technology, and innovation.
-    <br>
-    <hr>
-	WebMaster: Luis Rocha. Updated: 09.07.2026
-  </section>
+  <section id="index" class="tab-content active-content"></section>
 
   <!-- MEMBERS TAB -->
-  <section id="members" class="tab-content">
-    <h2>Organização / Structure</h2>
-    <p>
-      A AABBAV é composta por um Comitê Executivo e Membros Associados.
-	  <br> The AABBAV is structured around an Executive Board and its Associated Members.
-    </p>
-
-      <h2 class="centered-text">Comitê Executivo / Executive Board</h2>
-    <hr>
-	  
-    <div class="members-grid">
-      <!-- Member Card 1 -->
-      <div class="member-card">
-	<img 
-          src="./figs/gtd.jpg?text=Gustavo Duarte" 
-          alt="Gustavo Duarte" 
-        />
-        <h3>Presidente / President</h3>
-        <p>
-          Dr Gustavo Duarte
-        <br> Centro Belga de Energia Nuclear
-		<br> Studiecentrum voor kernenergie
-        <br> Centre d'étude de l'énergie nucléaire
-        </p>
-        <a href="https://www.linkedin.com/in/gustavo-turqueto-duarte-1b924465/" class="learn-more">Saiba Mais</a>
-      </div>
-
-      <!-- Member Card 2 -->
-      <div class="member-card">
-	<img 
-          src="./figs/luana.jpg?text=Luana Nascimento" 
-          alt="Luana Nascimento" 
-        />
-        <h3>Vice-Presidente / Vice-President</h3>
-        <p>
-          Dr Luana de Freitas Nascimento
-          <br> Centro Belga de Energia Nuclear
-	      <br> Studiecentrum voor kernenergie
-          <br> Centre d'étude de l'énergie nucléaire
-        </p>
-        <a href="https://www.linkedin.com/in/luana-f-nascimento-75a868b8/" class="learn-more">Saiba Mais</a>
-      </div>
-
-      <!-- Member Card 3 -->
-      <div class="member-card">
-	<img 
-          src="./figs/UTF-8GeorgesMartyn.jpg?text=Georges Martyn" 
-          alt="Georges Martyn" 
-        />
-        <h3>Diretor Administrativo / Administrative Director</h3>
-        <p>
-          Prof Dr Georges Martyn
-	      <br> Universidade de Gent
-	  	  <br> Universiteit Gent
-	</p>
-        <a href="https://www.rechtsgeschiedenis.be" class="learn-more">Saiba Mais</a>
-      </div>
-
-      <!-- Member Card 5 -->
-      <div class="member-card">
-      <img 
-          src="./figs/Luis-Rocha-30.jpg?text=Luis Rocha" 
-          alt="Luis E C Rocha" 
-       />
-        <h3>Diretor de Eventos / Events Director</h3>
-        <p>
-          Prof Dr Luis E C Rocha
-          <br> Universidade de Gent
-	      <br> Universiteit Gent
-        </p>
-        <a href="https://www.csi.ugent.be" class="learn-more">Saiba Mais</a>
-      </div>
-	<!-- Member Card 5 -->
-
-      <!-- Member Card 4 
-      <div class="member-card">
-	<img 
-          src="./figs/belgium_cat.jpg?text=Cat" 
-          alt="Cat" 
-        />
-        <h3>Secretário/a</h3>
-        <p>
-         Dr XXXX
-	</p>
-	<a href="https://xxxx" class="learn-more">Saiba Mais</a>
-      </div>
-      <!-- Member Card 6
-      <div class="member-card">
-	<img 
-          src="./figs/luana.jpg?text=Luana Nascimento" 
-          alt="Luana Nascimento" 
-        />
-        <h3>Diretor de Recrutamento</h3>
-        <p>
-          Prof Dr Luana Nascimento
-          <br> Centro Belga de Energia Nuclear
-	      <br> Studiecentrum voor kernenergie
-          <br> Centre d'étude de l'énergie nucléaire
-        </p>
-        <a href="https://www.linkedin.com/in/luana-f-nascimento-75a868b8/" class="learn-more">Saiba Mais</a>
-      </div>
-	    -->
-    </div>
-	  
-<hr>
-<h2 class="centered-text">Outros Membros <br>Other Members</h2>
-<hr>
-	<p> Dr Ana Vaniqui - SCK CEN
-    </p>
-	<p> Isabela Maria Rosal - KULeuven
-    </p>
-	<p> Dr Leonardo Martin - UAntwerpen
-    </p>
-	<p> Dr Thais Lemos Silva - Instituut voor Tropische Geneeskunde
-	</p>
-<hr>
-<h2 class="centered-text">Representantes na Bélgica <br>Local contacts in Belgium</h2>
-<hr>
-Contate-nos para ser um representante local / Contact us to be a local representative
-	<p>
-    	Centro Belga de Energia Nuclear / Studiecentrum voor kernenergie / Centre d'étude de l'énergie nucléaire: Dr Luana F Nascimento
-    </p>
-	<p>
-    	Universidade Livre de Bruxelas / Vrije Universiteit Brussel: Prof Dr Lucas Melgaço
-    </p>
-	<p>
-    	Universidade de Gent / Universiteit Gent: Prof Dr Luis E C Rocha
-    </p>
-<hr>
-<h2 class="centered-text">Representantes no Luxemburgo <br>Local contacts in Luxembourg</h2>
-<hr>
-	<p>
-    	University of Luxembourg / Universitéit Lëtzebuerg: Dr Demival Vasques Filho
-    </p>
-<hr>
-<h2 class="centered-text">Representantes no Brasil <br>Local contacts in Brazil</h2>
-<hr>
-	<p>
-    	Universidade de São Paulo - Prof Dr Edilaine Honório
-    </p>
-  </section>
+  <section id="members" class="tab-content"></section>
 
   <!-- EVENTS TAB -->
-  <section id="events" class="tab-content">
-    <h2>Eventos / Events</h2>
-    <p>
-      Fique por dentro dos nossos eventos / Follow our activities
-    </p>
-
-    <div class="event-categories">
-      <!-- SCIENTIFIC EVENTS -->
-      <div class="event-category">
-        <h3>Científicos / Scientific</h3>
-        <div class="event-list">
-         <!-- Event 1 -->
-          <div class="event-item">
-            <div class="event-date"> 16 October 2026</div>
-            <div class="event-info">
-              <h4>AABBAV Annual Meeting 2026 </h4>
-              <p>
-				The annual meeting (in English) will take place in the Embassy of Brazil in Brussels.
-              </p>
-              <a href="./reuniao_anual_2026.html" class="event-link">More information</a>
-            </div>
-          </div>
-		  <!-- Event 2 -->
-      </div>
-
-      <!-- EDUCATIONAL EVENTS -->
-      <div class="event-category">
-        <h3>Socio-culturais / Socio-cultural</h3>
-        <div class="event-list">
-          <!-- Event 1 -->
-        </div>
-      </div>
-    </div>
-	  
-      <!-- PAST EVENTS -->
-  <h2 style="margin-top: 3rem;">Eventos e Atividades Anteriores / Previous events and other activities</h2>
-  <div class="event-categories">
-    <div class="event-category">
-      <div class="event-list">
-		<!-- Past Event 4 -->
-		<div class="event-item">
-            <div class="event-date"> 5th May 2026</div>
-            <div class="event-info">
-              <h4>Encontros</h4>
-              <p>
-				This meeting (in English) took place online via MSTeams.
-              </p>
-              <a href="./encontros_052026.html" class="event-link">More information</a>
-            </div>
-          </div>
-        </div>
-         <!-- Past Event 3 -->
-          <div class="event-item">
-            <div class="event-date"> 17 de Outubro 2025</div>
-            <div class="event-info">
-              <h4>Reunião Anual da AABBAV 2025 </h4>
-              <p>
-                A reunião anual (em inglês) foi na Embaixada do Brasil em Bruxelas.
-				<br> The annual meeting (in English) took place in the Embassy of Brazil in Brussels.
-              </p>
-              <a href="./reuniao_anual_2025.html" class="event-link">Mais Informações / More information</a>
-            </div>
-          </div>
-		<!-- Past Event 2 -->
-        <div class="event-item">
-          <div class="event-date">14 de Abril 2025</div>
-          <div class="event-info">
-            <h4>Reunião Administrativa</h4>
-            <p>
-              Encontro com o embaixador Sr João Mendes Pereira na Embaixada do Brasil em Bruxelas.
-            </p>
-          </div>
-        </div>
-        <!-- Past Event 1 -->
-        <div class="event-item">
-          <div class="event-date">4 de Dezembro 2024</div>
-          <div class="event-info">
-            <h4>Belgo-Brazilian academic network event</h4>
-            <p>
-              Encontro inicial na Embaixada do Brasil em Bruxelas para discutir a formação da rede acadêmica. Organizadores: Prof Arno Dal Ri Jr e Prof Georges Martyn.
-            </p>
-          </div>
-        </div>
-	      
-      </div>
-    </div>
-    <!-- You can add more event-category blocks if you want separate groupings for past events -->
-  </div>
-</section>
+  <section id="events" class="tab-content"></section>
 
   <!-- PARTICIPE TAB -->
-  <section id="participe" class="tab-content">
-    <h2>Participe / Join us</h2>
-    <p>
-      Veja como se envolver com a Associação / Get involved with our Association
-    </p>
-	<p>
-      Divulgue-nos! / Spread the word!
-	  Print the
-	  <a href="./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf" class="learn-more">Download</a>
-    </p>
-	<hr>
-	<h2 class="centered-text">Torne-se membro / Become a member</h2>
-	<hr>
-	<p>
-    	Para tornar-se membro, é necessário estar associado a uma instituição acadêmica (Universidade ou Centro de Educação Profissional), ou centro de pesquisa devidamente reconhecido pelo governo Belga ou Brasileiro. Entre em contato conosco usando seu email institucional. A participacao é gratuita.
-		<br><b>Atenção:</b> Não membros são bem vindos às atividades de divulgação científica e cultural. 
-		<br><br> To become a member, it is mandatory to be affiliated to a higher education academic institution (University or Applied University), or research centre recognised by the Belgian or Brazilian governments. Contact us using your institutional email. Participation is free.
-    	<br><b>Attention:</b> Non-members are welcomed to our outreach activities.
-		</p>
-	<hr>
-	<h2 class="centered-text">Lista de emails / Email list</h2>
-	<hr>
-	<p>
-        Inscreva-se em nossa lista de emails. Mande um email em branco para <img src="figs/email subscribe AABB.gif" alt="Email Subscribe" style="height: 1.2em; vertical-align: middle;"> com o assunto/tópico "subscribe aabb SeuNome SeuSobrenome" 
-        <br>
-		Sign up for our mailing list. Send a blank email to <img src="figs/email subscribe AABB.gif" alt="Email Subscribe" style="height: 1.2em; vertical-align: middle;"> with subject "subscribe aabb FirstName LastName"
-        <br>
-	</p>
-	<hr>
-	<h2 class="centered-text">Contato / Contact</h2>
-	<hr>
-	<p>
-    	Para mais informações sobre a AABBAV, mande um email para <img src="figs/email AABB.gif" alt="Contato" style="height: 1.2em; vertical-align: middle;">
-    	<br> For more information about AABBAV, send an email to <img src="figs/email AABB.gif" alt="Contato" style="height: 1.2em; vertical-align: middle;">
-	</p>
-	  
-	<h2 class="centered-text">Siga-nos online / Follow us online</h2>
-	<hr>
-	<p class="centered-text" style="display: flex; justify-content: center; gap: 60px; text-align: center;">
-  	<span>
-    	<br>
-    	<img src="figs/qr-code_linkedin.png" alt="LinkedIn QR Code" style="height: 120px; vertical-align: middle;">
-    	<br>
-    	<a href="https://www.linkedin.com/in/aabb-associa%C3%A7%C3%A3o-acad%C3%AAmica-belgo-brasileira-2536a2377/" target="_blank">LinkedIn</a>
-    	<br><br>
-  	</span>
-  	<span>
-    	<br>
-    	<img src="figs/qr-code_instagram.png" alt="Instagram QR Code" style="height: 120px; vertical-align: middle;">
-    	<br>
-    	<a href="https://www.instagram.com/academia.belgobr" target="_blank">Instagram</a>
-    	<br><br>
-  	</span>
-	</p>
-
-  </section>
+  <section id="participe" class="tab-content"></section>
 
   <!-- BOLETIM TAB -->
-  <section id="boletim" class="tab-content">
-    <h2>Boletim / Newsletter</h2>
-    <p>
-      Veja um resumo das nossas atividades.
-      <br> Check out a summary of our activities.
-	</p>
+  <section id="boletim" class="tab-content"></section>
 
-    <div class="publication-list">
-      <!-- Publication 1 -->
-      <div class="boletim">
-        <h3 class="publication-title">Newsletter - November 2025</h3>
-		<a href="./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf" class="learn-more">Download</a>
-      </div>
-    </div>
-  </section>
-
-	
   <!-- INFORMACOES TAB -->
-  <section id="informacoes" class="tab-content">
-    <h2>Outras Informações / Other information</h2>
-    <p>
-      Em breve atualizaremos essa página com informações relevantes para a comunidade acadêmica Brasileira na Bélgica e Belgas com interesse no Brasil.
-      <br> The webpage will be updated in due time with further information relevant to our target academic community.
-	</p>
-
-    <div class="publication-list">
-      <!-- Publication 1 -->
-      <div class="publication">
-        <h3 class="publication-title">FWO</h3>
-        <p class="publication-authors">Agência de fomento da região Flamenga</p>
-		<a href="https://www.fwo.be" class="learn-more">Clique Aqui</a>
-      </div>
-      <div class="publication">
-        <h3 class="publication-title">FNRS</h3>
-        <p class="publication-authors">Agência de fomento da região Valã</p>
-		<a href="https://www.frs-fnrs.be" class="learn-more">Clique Aqui</a>
-      </div>
-	<div class="publication">
-        <h3 class="publication-title">EURAXESS</h3>
-        <p class="publication-authors">EURAXESS Latin America and the Caribbean</p>
-		<a href="https://euraxess.ec.europa.eu/worldwide/lac" class="learn-more">Clique Aqui</a>
-      </div>
-	<div class="publication">
-        <h3 class="publication-title">Rede Sabiá</h3>
-        <p class="publication-authors">Rede Sabiá</p>
-		<a href="https://www.redesabia.org" class="learn-more">Clique Aqui</a>
-      </div>
-
-      <!-- Publication 2 -->
-<!--      <div class="publication">
-        <h3 class="publication-title">Sustainable Materials in Construction</h3>
-        <p class="publication-authors">L. Garcia &amp; M. Johnson</p>
-        <p class="publication-journal">International Journal of Green Engineering, 2024</p>
-        <a href="#" class="publication-link">Download PDF</a>
-      </div>
--->
-
-      <!-- Add more publications as needed -->
-    </div>
-  </section>
+  <section id="informacoes" class="tab-content"></section>
 
   <!-- JAVASCRIPT FOR TABBED INTERFACE -->
   <script>
@@ -852,7 +426,7 @@ Contate-nos para ser um representante local / Contact us to be a local represent
   </script>
 
 
-  <!-- JAVASCRIPT FOR LANGUAGE SWITCHING; original source content and comments above are intentionally preserved -->
+  <!-- JAVASCRIPT FOR LANGUAGE SWITCHING -->
   <script>
 const translations = {
       pt: {
@@ -1490,6 +1064,94 @@ const translations = {
     document.addEventListener('DOMContentLoaded', () => {
       setLanguage(getInitialLanguage());
     });
+  </script>
+  <script type="text/plain" id="original-html-comments-preserved">
+The block below preserves the original HTML comments and inactive commented-out placeholders from the source file.
+It is not executed and is not rendered on the page.
+
+<!-- HEADER (TITLE + NAV) -->
+<!-- INDEX TAB -->
+<!-- Logos in three rows:
+         First row: 1 logo
+         Second row: 3 logos
+         Third row: 3 logos -->
+<!--    <div class="logo-row">
+  		<img src="./figs/logo_fwo.png" alt="Logo FWO" />
+    </div>
+
+    <div class="logo-row">
+	        <img src="./figs/logo_fwo.png" alt="Logo UGent" style="width: 50%; height: auto;"/>
+  		<img src="./figs/logo_UGent.png" alt="Logo UGent" style="width: 50%; height: auto;"/>
+  		<img src="./figs/logo_KULeuven.png" alt="Logo KULeuven" style="width: 50%; height: auto;"/>
+ 		<img src="./figs/logo_XXX.png" alt="Logo UNamur" style="width: 50%; height: auto;"/>
+    </div>
+    <div class="logo-row">
+  		<img src="./figs/logo_ULB.png" alt="Logo ULB" style="width: 50%; height: auto;"/>
+  		<img src="./figs/logo_UNamur.png" alt="Logo UNamur" style="width: 40%; height: auto;"/>
+  		<img src="./figs/logo_UCL.jpg" alt="Logo UCL" style="width: 50%; height: auto;"/>
+    </div>
+-->
+<!-- MEMBERS TAB -->
+<!-- Member Card 1 -->
+<!-- Member Card 2 -->
+<!-- Member Card 3 -->
+<!-- Member Card 5 -->
+<!-- Member Card 5 -->
+<!-- Member Card 4 
+      <div class="member-card">
+	<img 
+          src="./figs/belgium_cat.jpg?text=Cat" 
+          alt="Cat" 
+        />
+        <h3>Secretário/a</h3>
+        <p>
+         Dr XXXX
+	</p>
+	<a href="https://xxxx" class="learn-more">Saiba Mais</a>
+      </div>
+      <!-- Member Card 6
+      <div class="member-card">
+	<img 
+          src="./figs/luana.jpg?text=Luana Nascimento" 
+          alt="Luana Nascimento" 
+        />
+        <h3>Diretor de Recrutamento</h3>
+        <p>
+          Prof Dr Luana Nascimento
+          <br> Centro Belga de Energia Nuclear
+	      <br> Studiecentrum voor kernenergie
+          <br> Centre d'étude de l'énergie nucléaire
+        </p>
+        <a href="https://www.linkedin.com/in/luana-f-nascimento-75a868b8/" class="learn-more">Saiba Mais</a>
+      </div>
+	    -->
+<!-- EVENTS TAB -->
+<!-- SCIENTIFIC EVENTS -->
+<!-- Event 1 -->
+<!-- Event 2 -->
+<!-- EDUCATIONAL EVENTS -->
+<!-- Event 1 -->
+<!-- PAST EVENTS -->
+<!-- Past Event 4 -->
+<!-- Past Event 3 -->
+<!-- Past Event 2 -->
+<!-- Past Event 1 -->
+<!-- You can add more event-category blocks if you want separate groupings for past events -->
+<!-- PARTICIPE TAB -->
+<!-- BOLETIM TAB -->
+<!-- Publication 1 -->
+<!-- INFORMACOES TAB -->
+<!-- Publication 1 -->
+<!-- Publication 2 -->
+<!--      <div class="publication">
+        <h3 class="publication-title">Sustainable Materials in Construction</h3>
+        <p class="publication-authors">L. Garcia &amp; M. Johnson</p>
+        <p class="publication-journal">International Journal of Green Engineering, 2024</p>
+        <a href="#" class="publication-link">Download PDF</a>
+      </div>
+-->
+<!-- Add more publications as needed -->
+<!-- JAVASCRIPT FOR TABBED INTERFACE -->
   </script>
 
 </body>
