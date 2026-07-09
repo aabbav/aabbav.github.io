@@ -314,34 +314,46 @@
 
     /* ----- LANGUAGE SWITCHER ----- */
     .language-switcher {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      z-index: 3;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
       gap: 0.5rem;
-      max-width: 800px;
-      margin: 1rem auto 0;
-      padding: 0 1rem;
+      margin-bottom: 0;
     }
 
     .language-switcher button {
-      border: 1px solid rgba(13, 110, 253, 0.35);
-      background-color: rgba(13, 110, 253, 0.12);
-      color: #0d6efd;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      background-color: rgba(0, 0, 0, 0.25);
+      color: #fff;
       padding: 0.35rem 0.65rem;
       border-radius: 999px;
       cursor: pointer;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s;
     }
 
     .language-switcher button:hover,
     .language-switcher button.active-language {
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-      color: #fff;
+      background-color: rgba(255, 255, 255, 0.28);
+      border-color: #fff;
     }
-	  
+
+    @media (max-width: 900px) {
+      header {
+        padding-top: 4rem;
+      }
+
+      .language-switcher {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+    }
+      
     /* ----- RESPONSIVE DESIGN ----- */
     @media (max-width: 600px) {
       nav ul {
@@ -365,6 +377,13 @@
 
   <!-- HEADER (TITLE + NAV) -->
   <header>
+    <div class="language-switcher" aria-label="Language selector">
+      <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
+      <button type="button" data-lang-button="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+      <button type="button" data-lang-button="nl" onclick="setLanguage('nl')">🇳🇱 NL</button>
+      <button type="button" data-lang-button="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+    </div>
+
     <h1>Associação Acadêmica Belgo-Brasileira</h1>
 
     <nav>
@@ -378,13 +397,6 @@
       </ul>
     </nav>
   </header>
-
-  <div class="language-switcher" aria-label="Language selector">
-    <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
-    <button type="button" data-lang-button="en" onclick="setLanguage('en')">🇬🇧 EN</button>
-    <button type="button" data-lang-button="nl" onclick="setLanguage('nl')">🇳🇱 NL</button>
-    <button type="button" data-lang-button="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
-  </div>
 
   <!-- INDEX TAB -->
   <section id="index" class="tab-content active-content"></section>
