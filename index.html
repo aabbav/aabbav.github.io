@@ -47,27 +47,17 @@
       z-index: 1;
     }
 
-	header h1,
-	header nav,
-	.header-top {
-	  position: relative; /* So they're above the overlay */
-	  z-index: 2;
-	}
-	
-	.header-top {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  max-width: 1100px;
-	  margin: 0 auto 1rem;
-	  min-height: 3rem;
-	}
-	
-	header h1 {
-	  font-size: 2rem;
-	  margin-bottom: 0;
-	  text-align: center;
-	}
+    header h1,
+    header nav {
+      position: relative; /* So they're above the overlay */
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
     nav ul {
       list-style-type: none;
@@ -323,49 +313,34 @@
 
 
     /* ----- LANGUAGE SWITCHER ----- */
-	.language-switcher {
-	  position: absolute;
-	  right: 0;
-	  top: 50%;
-	  transform: translateY(-50%);
-	  z-index: 3;
-	  display: flex;
-	  justify-content: flex-end;
-	  flex-wrap: wrap;
-	  gap: 0.5rem;
-	  margin-bottom: 0;
-	}
+    .language-switcher {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      max-width: 800px;
+      margin: 1rem auto 0;
+      padding: 0 1rem;
+    }
 
     .language-switcher button {
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      background-color: rgba(0, 0, 0, 0.25);
-      color: #fff;
+      border: 1px solid rgba(13, 110, 253, 0.35);
+      background-color: rgba(13, 110, 253, 0.12);
+      color: #0d6efd;
       padding: 0.35rem 0.65rem;
       border-radius: 999px;
       cursor: pointer;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: background-color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     }
 
     .language-switcher button:hover,
     .language-switcher button.active-language {
-      background-color: rgba(255, 255, 255, 0.28);
-      border-color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      color: #fff;
     }
-
-	@media (max-width: 900px) {
-	  .header-top {
-	    flex-direction: column;
-	    gap: 0.75rem;
-	  }
-	
-	  .language-switcher {
-	    position: static;
-	    transform: none;
-	    justify-content: center;
-	  }
-	}
 	  
     /* ----- RESPONSIVE DESIGN ----- */
     @media (max-width: 600px) {
@@ -388,11 +363,11 @@
 </head>
 <body>
 
-  <!-- HEADER (TITLE + NAV) --><header>
-	  <div class="header-top">
-	    <h1>Associação Acadêmica Belgo-Brasileira</h1>
-	  </div>
-	  <nav>
+  <!-- HEADER (TITLE + NAV) -->
+  <header>
+    <h1>Associação Acadêmica Belgo-Brasileira</h1>
+
+    <nav>
       <ul>
         <li><a href="#index" class="active" onclick="openTab(event, 'index')">Início</a></li>
         <li><a href="#members" onclick="openTab(event, 'members')">Organização</a></li>
@@ -403,12 +378,14 @@
       </ul>
     </nav>
   </header>
-	    <div class="language-switcher" aria-label="Language selector">
-	      <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
-	      <button type="button" data-lang-button="en" onclick="setLanguage('en')">🇬🇧 EN</button>
-	      <button type="button" data-lang-button="nl" onclick="setLanguage('nl')">🇳🇱 NL</button>
-	      <button type="button" data-lang-button="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
-	    </div>
+
+  <div class="language-switcher" aria-label="Language selector">
+    <button type="button" data-lang-button="pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
+    <button type="button" data-lang-button="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+    <button type="button" data-lang-button="nl" onclick="setLanguage('nl')">🇳🇱 NL</button>
+    <button type="button" data-lang-button="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+  </div>
+
   <!-- INDEX TAB -->
   <section id="index" class="tab-content active-content"></section>
 
