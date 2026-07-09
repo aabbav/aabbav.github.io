@@ -345,30 +345,122 @@
 
     @media (max-width: 900px) {
       header {
-        padding-top: 4rem;
+        padding-top: 4.25rem;
       }
 
       .language-switcher {
         top: 0.75rem;
         right: 0.75rem;
+        max-width: calc(100% - 1.5rem);
+        gap: 0.35rem;
+      }
+
+      .language-switcher button {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.8rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 0.75rem;
       }
     }
       
     /* ----- RESPONSIVE DESIGN ----- */
     @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+
+      header {
+        padding: 3.75rem 0.75rem 1.5rem;
+        background-position: center top;
+      }
+
+      header h1 {
+        font-size: 1.35rem;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+        padding: 0 0.5rem;
+      }
+
+      .language-switcher {
+        top: 0.5rem;
+        right: 0.5rem;
+        gap: 0.25rem;
+      }
+
+      .language-switcher button {
+        padding: 0.25rem 0.45rem;
+        font-size: 0.72rem;
+      }
+
       nav ul {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: stretch;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 0.35rem;
       }
 
       nav a {
-        display: inline-block;
+        display: block;
         text-align: center;
         width: 100%;
+        padding: 0.45rem 0.6rem;
+      }
+
+      .tab-content {
+        margin: 1rem 0.75rem;
+        padding: 1.25rem;
+      }
+
+      .centered-text {
+        font-size: 1.35rem;
+      }
+
+      .members-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
       .event-categories {
         flex-direction: column;
+      }
+
+      .event-item {
+        flex-direction: column;
+      }
+
+      .event-date {
+        width: 100%;
+        height: auto;
+        min-height: 3rem;
+      }
+
+      .event-info {
+        padding: 1rem;
+      }
+
+      .publication {
+        padding: 1rem;
+      }
+
+      #participe p[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .language-switcher button {
+        padding: 0.22rem 0.36rem;
+        font-size: 0.68rem;
+      }
+
+      header h1 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -506,7 +598,7 @@ const translations = {
         network2024Description: "Encontro inicial na Embaixada do Brasil em Bruxelas para discutir a formação da rede acadêmica. Organizadores: Prof Arno Dal Ri Jr e Prof Georges Martyn.",
         joinTitle: "Participe",
         joinIntro: "Veja como se envolver com a Associação.",
-        spreadWord: "Divulgue-nos! Imprima o cartaz e coloque em sua Instituição: <a href=\"./figs/AABB_Banner_A3.pdf\" class=\"learn-more\">Download</a>",
+        spreadWord: "Divulgue-nos! Imprima o boletim: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
         becomeMemberTitle: "Torne-se membro",
         becomeMemberText: "Para tornar-se membro, é necessário estar associado a uma instituição acadêmica de ensino superior, como uma universidade ou centro de educação profissional, ou a um centro de pesquisa devidamente reconhecido pelo governo belga ou brasileiro. Entre em contato conosco usando seu email institucional. A participação é gratuita.<br><br><strong>Atenção:</strong> Não membros são bem-vindos às atividades de divulgação científica e cultural.",
         emailListTitle: "Lista de emails",
@@ -589,7 +681,7 @@ const translations = {
         network2024Description: "Initial meeting at the Embassy of Brazil in Brussels to discuss the formation of the academic network. Organisers: Prof Arno Dal Ri Jr and Prof Georges Martyn.",
         joinTitle: "Get Involved",
         joinIntro: "See how to get involved with the Association.",
-        spreadWord: "Spread the word! Print the poster and display it at your institution: <a href=\"./figs/AABB_Banner_A3.pdf\" class=\"learn-more\">Download</a>",
+        spreadWord: "Spread the word! Print the newsletter: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
         becomeMemberTitle: "Become a member",
         becomeMemberText: "To become a member, you must be affiliated with a higher education academic institution, such as a university or university of applied sciences, or with a research centre duly recognised by the Belgian or Brazilian governments. Contact us using your institutional email address. Participation is free.<br><br><strong>Note:</strong> Non-members are welcome to attend our scientific and cultural outreach activities.",
         emailListTitle: "Email list",
@@ -672,7 +764,7 @@ const translations = {
         network2024Description: "Eerste bijeenkomst in de Ambassade van Brazilië in Brussel om de vorming van het academische netwerk te bespreken. Organisatoren: Prof Arno Dal Ri Jr en Prof Georges Martyn.",
         joinTitle: "Doe mee",
         joinIntro: "Ontdek hoe u bij de Vereniging betrokken kunt raken.",
-        spreadWord: "Verspreid het nieuws! Druk de poster af en hang hem op in jouw instelling: <a href=\"./figs/AABB_Banner_A3.pdf\" class=\"learn-more\">Download</a>",
+        spreadWord: "Verspreid het nieuws! Druk de nieuwsbrief af: <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Download</a>",
         becomeMemberTitle: "Lid worden",
         becomeMemberText: "Om lid te worden, moet u verbonden zijn aan een academische instelling voor hoger onderwijs, zoals een universiteit of hogeschool, of aan een onderzoekscentrum dat officieel erkend is door de Belgische of Braziliaanse overheid. Neem contact met ons op via uw institutionele e-mailadres. Deelname is gratis.<br><br><strong>Let op:</strong> Niet-leden zijn welkom bij onze wetenschappelijke en culturele publieksactiviteiten.",
         emailListTitle: "E-maillijst",
@@ -755,7 +847,7 @@ const translations = {
         network2024Description: "Rencontre initiale à l'Ambassade du Brésil à Bruxelles afin de discuter de la formation du réseau académique. Organisateurs : Prof Arno Dal Ri Jr et Prof Georges Martyn.",
         joinTitle: "Participer",
         joinIntro: "Découvrez comment vous impliquer dans l'Association.",
-        spreadWord: "Faites passer le message ! Imprimez l'affiche et suspendez-la dans votre établissement: <a href=\"./figs/AABB_Banner_A3.pdf\" class=\"learn-more\">Télécharger</a>",
+        spreadWord: "Faites passer le message ! Imprimez le bulletin : <a href=\"./boletim/AABB_BBAV_Newsletter_Issue1_Nov2025.pdf\" class=\"learn-more\">Télécharger</a>",
         becomeMemberTitle: "Devenir membre",
         becomeMemberText: "Pour devenir membre, vous devez être affilié à un établissement académique d'enseignement supérieur, tel qu'une université ou une haute école, ou à un centre de recherche dûment reconnu par les gouvernements belge ou brésilien. Contactez-nous avec votre adresse e-mail institutionnelle. La participation est gratuite.<br><br><strong>Attention :</strong> Les non-membres sont les bienvenus à nos activités de diffusion scientifique et culturelle.",
         emailListTitle: "Liste de diffusion",
